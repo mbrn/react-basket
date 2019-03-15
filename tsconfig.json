@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "declaration": true,    
+    "jsx": "react",
     "outDir": "./dist",
     "target": "es5",
     "module": "commonjs",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
-  "include": [
-    "index.ts",
+  "include": [    
     "src/**/*"
   ]
 }

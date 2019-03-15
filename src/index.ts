@@ -1,1 +1,1 @@
-export const x = 5;
+export { BasketProvider } from './basket-provider';
