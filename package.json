@@ -1,0 +1,33 @@
+{
+  "name": "react-basket",
+  "version": "0.1.1",
+  "description": "A shopping basket components library for React based on material-ui components.",
+  "main": "./dist/index.js",
+  "homepage": "https://github.com/mbrn/react-basket#readme",
+  "author": "Mehmet Baran",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbrn/react-basket.git"
+  },
+  "keywords": [
+    "javascript",
+    "shopping",
+    "cart",
+    "basket",
+    "react",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/mbrn/react-basket/issues"
+  },
+  "devDependencies": {
+    "typescript": "3.1.3"
+  }
+}
