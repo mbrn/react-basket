@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
+// @ts-ignore
 import { AppContainer } from 'react-hot-loader';
 import App from './App';
+import './index.css';
 
 const rootEl = document.getElementById('root');
 

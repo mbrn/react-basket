@@ -7,7 +7,7 @@ export interface BasketProviderProps {
 export class BasketProvider extends React.Component<BasketProviderProps, any> {
   public render() {
     return ( 
-      <div>ok</div>
+      <div>ossdasdsaddk</div>
     );
   }
 }
