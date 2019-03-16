@@ -20,15 +20,24 @@ class BasketInner extends React.Component<BasketProps, any> {
             components={{
               Container: (props:any) => <Paper {...props} elevation={0} />
             }}
+            isLoading={this.props.basketData.isLoading}
             title="Shopping Cart"
             data={this.props.basketData.items}
             actions={[
               {
                 icon: () => <DeleteOutline/>,
                 tooltip: 'Delete Item(s)',
-                onClick: (rowData:any) => {
-                  alert('item(s) will be deleted');
+                onClick: (e:any, rowData:any) => {
+                  this.props.basketData.onItemDeleted(rowData.id);
                 }
+              },
+              {
+                icon: () => <DeleteOutline/>,
+                tooltip: 'Delete All Item',
+                onClick: () => {
+                  // this.props.basketData.onAllItemsDeleted();
+                },
+                isFreeAction: true
               }
             ]}
             columns={[
@@ -62,6 +71,7 @@ class BasketInner extends React.Component<BasketProps, any> {
             </Typography>
           <Button
             variant="outlined"
+            color="primary"
             style={{ textTransform: 'none' }}                        
           >
             Payment
