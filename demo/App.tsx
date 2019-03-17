@@ -19,7 +19,7 @@ class App extends React.Component<AppProps, any> {
           <AppBar position="static" elevation={0}>
             <Toolbar>
               <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-                Material-UI
+                react-basket demo
               </Typography>
               <div className={classes.grow} />
               <BasketContext.Consumer>
