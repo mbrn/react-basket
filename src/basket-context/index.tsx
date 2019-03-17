@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { BasketData } from '../';
+import { BasketData, BasketItem } from '../';
 
 const BasketContext = React.createContext<BasketData>({
   items: [],
+  onItemAdded: (id: string) => {},
   onItemDeleted: (id: string) => {}
 });
 
