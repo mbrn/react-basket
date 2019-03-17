@@ -14,7 +14,7 @@ module.exports = {
     './index.tsx' // the entry point of our app
   ],
   devServer: {
-    hot: true, // enable HMR on the server
+    hot: true, // enable HMR on the server    
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',

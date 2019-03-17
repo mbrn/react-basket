@@ -2,6 +2,8 @@ export interface BasketData {
   isLoading?: boolean;
   items: BasketItem[];
 
+  
+  onAllItemsDeleted: () => void;
   onItemAdded: (id: string) => void;
   onItemDeleted: (id: string) => void;
 }

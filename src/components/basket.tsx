@@ -35,7 +35,7 @@ class BasketInner extends React.Component<BasketProps, any> {
                 icon: () => <DeleteOutline/>,
                 tooltip: 'Delete All Item',
                 onClick: () => {
-                  // this.props.basketData.onAllItemsDeleted();
+                  this.props.basketData.onAllItemsDeleted();
                 },
                 isFreeAction: true
               }

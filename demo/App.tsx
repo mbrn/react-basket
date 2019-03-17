@@ -17,7 +17,7 @@ class App extends React.Component<AppProps, any> {
       <BasketProvider dataProvider={new PusherBasketDataProvider()}>
         <div className={classes.root}>
           <AppBar position="static" elevation={0}>
-            <Toolbar>
+            <Toolbar variant="dense">
               <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                 react-basket demo
               </Typography>

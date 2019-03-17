@@ -46,6 +46,23 @@ export class PusherBasketDataProvider implements DataProvider {
     });
   }
 
+  onAllItemsDeleted = (): Promise<BasketItem[]> => {
+    return new Promise<BasketItem[]>((resolve, reject) => {
+      axios.delete("http://localhost:8080/cart", {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(response => {
+          resolve(response.data);
+        })
+        .catch(reason => {
+          reject(reason);
+        })
+    });
+  }
+
   onItemAdded = (id: string): Promise<BasketItem[]> => {
     return new Promise<BasketItem[]>((resolve, reject) => {
       axios.post<BasketItem[]>("http://localhost:8080/cart/item", { id }, {

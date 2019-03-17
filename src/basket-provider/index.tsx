@@ -5,6 +5,7 @@ import { BasketData, BasketItem } from '../basket-data';
 
 export interface DataProvider {
   getInitialData(): Promise<BasketItem[]>;
+  onAllItemsDeleted(): Promise<BasketItem[]>;
   onItemAdded(id: string): Promise<BasketItem[]>;
   onItemDeleted(id: string): Promise<BasketItem[]>;
   registerToChanges(callback: (items: BasketItem[]) => void): any;
@@ -22,6 +23,7 @@ export class BasketProvider extends React.Component<BasketProviderProps, BasketD
     this.state = {
       isLoading: false,
       items: [],
+      onAllItemsDeleted: this.onAllItemsAdded,
       onItemAdded: this.onItemAdded,
       onItemDeleted: this.onItemDeleted,
     }
@@ -36,6 +38,15 @@ export class BasketProvider extends React.Component<BasketProviderProps, BasketD
   componentDidMount() {
     this.setState({ isLoading: true }, () => {
       this.props.dataProvider.getInitialData()
+        .then(items => {
+          this.setState({ items, isLoading: false })
+        });
+    })
+  }
+
+  onAllItemsAdded = () => {
+    this.setState({ isLoading: true }, () => {
+      this.props.dataProvider.onAllItemsDeleted()
         .then(items => {
           this.setState({ items, isLoading: false })
         });
