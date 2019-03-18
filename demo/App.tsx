@@ -4,7 +4,6 @@ import { createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/s
 import { AppBar, Toolbar, Typography, IconButton, Badge } from '@material-ui/core';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import { MyBasketDataProvider } from './MyBasketDataProvider';
-import { PusherBasketDataProvider } from './PusherBasketDataProvider';
 import { Products } from './Products';
 
 export interface AppProps extends WithStyles<typeof styles> { }
@@ -14,7 +13,7 @@ class App extends React.Component<AppProps, any> {
     const { classes } = this.props;
 
     return (
-      <BasketProvider dataProvider={new PusherBasketDataProvider()}>
+      <BasketProvider dataProvider={new MyBasketDataProvider()}>
         <div className={classes.root}>
           <AppBar position="static" elevation={0}>
             <Toolbar variant="dense">

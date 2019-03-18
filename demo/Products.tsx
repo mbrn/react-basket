@@ -1,35 +1,19 @@
 import * as React from 'react';
 import { CircularProgress, Card, CardContent, CardHeader, CardActions, Button, Typography } from '@material-ui/core';
-import Axios from 'axios';
 import { BasketItem, withBasketData, BasketData } from '../src';
 
-class ProductsInner extends React.Component<{basketData: BasketData}, any> {
+class ProductsInner extends React.Component<{ basketData: BasketData }, any> {
 
   constructor(props: any) {
     super(props);
 
     this.state = {
       isLoading: false,
-      items: []
+      items: [
+        { id: "1", name: 'Computer', price: 1722.44, quantity: 1 },
+        { id: "2", name: 'Phone', price: 522.14, quantity: 2 }
+      ]
     }
-  }
-
-  componentDidMount() {
-    this.setState({ isLoading: true }, () => {
-      Axios.get<BasketItem>("http://localhost:8080/products")
-        .then(response => {
-          this.setState({
-            items: response.data,
-            isLoading: false
-          })
-        })
-        .catch(reason => {
-          this.setState({
-            error: reason,
-            isLoading: false
-          });
-        });
-    })
   }
 
   public render() {
@@ -50,9 +34,9 @@ class ProductsInner extends React.Component<{basketData: BasketData}, any> {
     }
 
     return (
-      <div style={{display: 'flex', margin: -5}}>
+      <div style={{ display: 'flex', margin: -5 }}>
         {this.state.items.map(item => (
-          <Card style={{flex: 1, margin: 5}} elevation={0}>            
+          <Card style={{ flex: 1, margin: 5 }} elevation={0}>
             <CardContent>
               <Typography variant="h6">
                 {item.name}
@@ -61,8 +45,8 @@ class ProductsInner extends React.Component<{basketData: BasketData}, any> {
                 Price ${item.price}
               </Typography>
             </CardContent>
-            <CardActions style={{justifyContent: 'flex-end'}}>
-              <Button variant="outlined" color="primary" style={{textTransform: 'none'}}
+            <CardActions style={{ justifyContent: 'flex-end' }}>
+              <Button variant="outlined" color="primary" style={{ textTransform: 'none' }}
                 onClick={() => {
                   this.props.basketData.onItemAdded(item.id);
                 }}
@@ -70,7 +54,7 @@ class ProductsInner extends React.Component<{basketData: BasketData}, any> {
                 Add to Basket
               </Button>
             </CardActions>
-          </Card>          
+          </Card>
         ))}
       </div>
     )
