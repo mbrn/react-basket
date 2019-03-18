@@ -10,8 +10,9 @@
     "dist"
   ],
   "scripts": {
-    "start": "webpack-dev-server --config=demo/webpack.config.js",
-    "build": "tsc"
+    "start": "webpack-dev-server --config=docs/demo-app/webpack.config.js",
+    "build": "tsc",
+    "build:docs": "webpack --config=docs/demo-app/webpack.config.js"
   },
   "repository": {
     "type": "git",

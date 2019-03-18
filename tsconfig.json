@@ -2,9 +2,8 @@
   "compilerOptions": {
     "declaration": true,    
     "jsx": "react",
-    "lib": ["es2015"],
     "outDir": "./dist",
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
