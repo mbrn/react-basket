@@ -88,8 +88,10 @@ export class MyBasketDataProvider implements DataProvider {
 }
 ```
 
+> I used Typescript, but you can use pure javascript.
+
 ### 2. Adding Basket Provider to app
-    You should add BasketProvider component in root of your application with a data provider implementation. 
+You should add BasketProvider component in root of your application with a data provider implementation. 
 
 ```javascript
 class App extends React.Component {
@@ -104,4 +106,34 @@ class App extends React.Component {
   }
 }
 ```
+
+### 3. Use Basket component
+
+It connects to BasketProvider and take data from it. 
+
+```javascript
+import { Basket } from 'react-basket';
+
+<Basket />
+```
+
+### 4. Connect to basket data anywhere
+
+
+```javascript
+import { withBasketData } from 'react-basket';
+import { IconButton, Badge } from '@material-ui/core';
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
+
+const MyComponent = (props) => (
+    <IconButton color="inherit">
+        <Badge badgeContent={props.basketData.items.length} color="secondary">
+            <ShoppingCart />
+        </Badge>
+    </IconButton>
+) 
+
+export default withBasketData(MyComponent);
+```
+
 
