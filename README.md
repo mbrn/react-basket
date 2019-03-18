@@ -15,8 +15,10 @@ A shopping basket components library for React based on material-ui components.
 - Connect to shopping cart data anywhere in app
 
 ## Demo
+
 You can access the demo page from [__demo site__](https://mbrn.github.io/react-basket/).
 
+If you have any sort of doubt, idea or just want to talk about the project, feel free to join [our chat on Gitter](https://gitter.im/mbrn-react-basket/Lobby) :)
 
 ## Installation
     npm install react-basket
