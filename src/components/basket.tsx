@@ -7,10 +7,16 @@ import { BasketData } from '../basket-data';
 
 
 export interface BasketProps {
-  basketData: BasketData
+  basketData: BasketData,
+  showPaymentButton?: boolean
 }
 
 class BasketInner extends React.Component<BasketProps, any> {
+  static defaultProps = {
+    basketData: null,
+    showPaymentButton: true
+  }
+
   public render() {
     return (
       <Card elevation={0}>
@@ -65,18 +71,20 @@ class BasketInner extends React.Component<BasketProps, any> {
 
           </div>
         </CardContent>
-        <CardActions style={{ justifyContent: "flex-end" }}>
-          <Typography variant="title" style={{ marginRight: 10 }}>
-            Total: $1987.22            
-            </Typography>
-          <Button
-            variant="outlined"
-            color="primary"
-            style={{ textTransform: 'none' }}                        
-          >
-            Payment
-          </Button>
-        </CardActions>
+        {this.props.showPaymentButton &&
+          <CardActions style={{ justifyContent: "flex-end" }}>
+            <Typography variant="title" style={{ marginRight: 10 }}>
+              Total: $1987.22            
+              </Typography>
+            <Button
+              variant="outlined"
+              color="primary"
+              style={{ textTransform: 'none' }}                        
+            >
+              Payment
+            </Button>
+          </CardActions>
+        }
       </Card>
     );
   }
