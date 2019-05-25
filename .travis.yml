@@ -5,6 +5,7 @@ node_js:
 install:
   - npm install
 script:  
+  - npm i --no-save @material-ui/icons
   - npm run build
 deploy:
   provider: npm
