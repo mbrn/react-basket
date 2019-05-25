@@ -4,6 +4,7 @@ import MaterialTable from 'material-table';
 import DeleteOutline from '@material-ui/icons/DeleteOutline';
 import { withBasketData } from '../basket-context';
 import { BasketData } from '../basket-data';
+import { Omit } from '@material-ui/core';
 
 
 export interface BasketProps {
@@ -90,4 +91,4 @@ class BasketInner extends React.Component<BasketProps, any> {
   }
 }
 
-export const Basket = withBasketData(BasketInner);
+export const Basket = withBasketData<Omit<BasketProps, "basketData">>(BasketInner);

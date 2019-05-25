@@ -8,11 +8,11 @@ const BasketContext = React.createContext<BasketData>({
   onItemDeleted: (id: string) => {}
 });
 
-const withBasketData = (Wrap: any) => () => {
+const withBasketData =  <T extends {}>(Wrap: any) => (props: T) => {
   return (
     <BasketContext.Consumer>
       {(basketData: BasketData) => (
-        <Wrap basketData={basketData}/>
+        <Wrap basketData={basketData} {...props}/>
       )}
     </BasketContext.Consumer>
   )
