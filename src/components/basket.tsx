@@ -75,7 +75,7 @@ class BasketInner extends React.Component<BasketProps, any> {
         {this.props.showPaymentButton &&
           <CardActions style={{ justifyContent: "flex-end" }}>
             <Typography variant="title" style={{ marginRight: 10 }}>
-              Total: $1987.22            
+              Total: $1987.22!           
               </Typography>
             <Button
               variant="outlined"
